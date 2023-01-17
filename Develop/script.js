@@ -12,80 +12,80 @@ function writePassword() {
   var count = 0;
 
   //while loop checking for uppercase letters in password
-    while (count == 0) {
-      let isUppercaseLetter = prompt("Would you like to include and uppercase letter?", "Enter Y or N");
+  while (count == 0) {
+    let isUppercaseLetter = prompt("Would you like to include and uppercase letter?", "Enter Y or N");
 
-      isUppercaseLetter = isUppercaseLetter.toUpperCase() ;
+    isUppercaseLetter = isUppercaseLetter.toUpperCase() ;
         
-      if (isUppercaseLetter == ("Y")) {
-        var addUppercase = true;
-        count = count + 1;
-      }
-      else if (isUppercaseLetter== ("N")) {
-        addUppercase = false;
-        count = count +1;
-      }
-      else {
-        alert("Enter Y or N");
-      }
+    if (isUppercaseLetter == ("Y")) {
+      var addUppercase = true;
+      count = count + 1;
     }
+    else if (isUppercaseLetter== ("N")) {
+      addUppercase = false;
+      count = count +1;
+    }
+    else {
+      alert("Enter Y or N");
+    }
+  }
 
-    //while loop checking for lowercase letters in password
-    while (count == 1) {
-      let isLowercaseLetter = prompt("Would you like to include and lowercase letter?", "Enter Y or N");
+  //while loop checking for lowercase letters in password
+  while (count == 1) {
+    let isLowercaseLetter = prompt("Would you like to include and lowercase letter?", "Enter Y or N");
 
-      isLowercaseLetter = isLowercaseLetter.toUpperCase() ;
+    isLowercaseLetter = isLowercaseLetter.toUpperCase() ;
         
-      if (isLowercaseLetter == ("Y")) {
-        var addLowercase = true;
-        count = count + 1;
-      }
-      else if (isLowercaseLetter== ("N")) {
-        addLowercase = false;
-        count = count + 1;
-      }
-      else {
-        alert("Enter Y or N");
-      }
+    if (isLowercaseLetter == ("Y")) {
+      var addLowercase = true;
+      count = count + 1;
     }
+    else if (isLowercaseLetter== ("N")) {
+      addLowercase = false;
+      count = count + 1;
+    }
+    else {
+      alert("Enter Y or N");
+    }
+  }
     
-    //while loop checking for special characters in password
-    while (count == 2) {
-      let specialChar = prompt("Would you like to include a special character?", "Enter Y or N");
+  //while loop checking for special characters in password
+  while (count == 2) {
+    let specialChar = prompt("Would you like to include a special character?", "Enter Y or N");
         
-      specialChar = specialChar.toUpperCase() ;
+    specialChar = specialChar.toUpperCase() ;
         
-      if (specialChar == ("Y")) {
-        var addSpecialChar = true;
-        count = count + 1;
-      }
-      else if (specialChar== ("N")) {
-        addSpecialChar = false;
-        count = count + 1;
-      }
-      else {
-        alert("Enter Y or N");
-      }
+    if (specialChar == ("Y")) {
+      var addSpecialChar = true;
+      count = count + 1;
     }
+    else if (specialChar== ("N")) {
+      addSpecialChar = false;
+      count = count + 1;
+    }
+    else {
+      alert("Enter Y or N");
+    }
+  }
 
-    //while loop checking for numbers in password
-    while (count == 3) {
-      let includeNumber = prompt("Would you like to include a number?", "Enter Y or N");
+  //while loop checking for numbers in password
+  while (count == 3) {
+    let includeNumber = prompt("Would you like to include a number?", "Enter Y or N");
         
-      includeNumber = includeNumber.toUpperCase() ;
+    includeNumber = includeNumber.toUpperCase() ;
         
-      if (includeNumber == ("Y")) {
-        var addNumber = true;
-        count = count + 1;
-      }
-      else if (includeNumber == ("N")) {
-        addNumber = false;
-        count = count + 1;
-      }
-      else {
-        alert("Enter Y or N");
-      }
+    if (includeNumber == ("Y")) {
+      var addNumber = true;
+      count = count + 1;
     }
+    else if (includeNumber == ("N")) {
+      addNumber = false;
+      count = count + 1;
+    }
+    else {
+      alert("Enter Y or N");
+    }
+  }
 
 
   //while loop asking user how many characters in password from 8 to 128
@@ -109,9 +109,9 @@ function writePassword() {
   var password ="";
 
   //iteration looking to see if the characters will be upper, lower, special or number
-  for (var i = 0; i <= addLength; i++) {
+  for (var i = 0; i < addLength; i++) {
     if((addUppercase) && (addLowercase) && (addSpecialChar) && (addNumber)){
-      var charascters = upperCaseletter + lowerCaseletter + chooseChars + chooseNumbers;
+      var characters = upperCaseletter + lowerCaseletter + chooseChars + chooseNumbers;
       var randomPassword = Math.floor(Math.random()*characters.length);
       password += characters.substring(randomPassword, randomPassword +1);
     }
@@ -186,9 +186,9 @@ function writePassword() {
       password += characters.substring(randomPassword, randomPassword +1);
     }
   }
-  randomPassword= password;
+  //randomPassword= password;
 
-  passwordText.value =password;
+  passwordText.value = password;
 
 }
 
