@@ -10,11 +10,13 @@
 
 Provide instructions and examples for use. Include screenshots as needed.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+The following screenshot demonstrates the homepage of the password generator
 
 ![Generator Homescreen](https://user-images.githubusercontent.com/120453099/212822254-79609ed4-d9ef-4844-aa99-67fc2d342485.png)
 
 ![Password Generator asking user for criteria](https://user-images.githubusercontent.com/120453099/212822370-9b74642a-5b27-407b-ad3c-20d9ead8927f.png)
+
+![Password Generated](https://user-images.githubusercontent.com/120453099/212822488-6f9bdbf1-8f66-4656-80e8-fffdf942b5c9.png)
 
 ## Credits
 
