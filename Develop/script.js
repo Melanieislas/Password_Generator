@@ -11,73 +11,130 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   var count = 0;
 
+  //while loop checking for uppercase letters in password
   while (count == 0) {
-    let isCaseLetter = prompt("Would you like to include and upercase letter?", "Enter Y or N");
+    let isUppercaseLetter = prompt("Would you like to include and uppercase letter?", "Enter Y or N");
 
-    isCaseLetter = isCaseLetter.toUpperCase() ;
-    
-    if (isCaseLetter == ("Y")) {
+    isUppercaseLetter = isUppercaseLetter.toUpperCase() ;
+      
+    if (isUppercaseLetter == ("Y")) {
       var addUppercase = true;
-      count = 1;
+      count = count + 1;
     }
-    else if (isCaseLetter== ("N")) {
+    else if (isUppercaseLetter== ("N")) {
       addUppercase = false;
-      count = 1;
+      count = count +1;
+    }
+    else {
+      alert("Enter Y or N");
+    }
+  }
+
+  //while loop checking for lowercase letters in password
+  while (count == 1) {
+    let isLowercaseLetter = prompt("Would you like to include and lowercase letter?", "Enter Y or N");
+
+    isLowercaseLetter = isLowercaseLetter.toUpperCase() ;
+      
+    if (isLowercaseLetter == ("Y")) {
+      var addLowercase = true;
+      count = count + 1;
+    }
+    else if (isLowercaseLetter== ("N")) {
+      addLowercase = false;
+      count = count + 1;
     }
     else {
       alert("Enter Y or N");
     }
   }
   
-  while (count == 1) {
+  //while loop checking for special characters in password
+  while (count == 2) {
     let specialChar = prompt("Would you like to include a special character?", "Enter Y or N");
-    
+      
     specialChar = specialChar.toUpperCase() ;
-    
+      
     if (specialChar == ("Y")) {
       var addSpecialChar = true;
-      count = 2;
+      count = count + 1;
     }
     else if (specialChar== ("N")) {
       addSpecialChar = false;
-      count = 2;
+      count = count + 1;
     }
     else {
       alert("Enter Y or N");
     }
   }
 
-  while (count == 2) {
+  //while loop checking for numbers in password
+  while (count == 3) {
     let includeNumber = prompt("Would you like to include a number?", "Enter Y or N");
-    
+      
     includeNumber = includeNumber.toUpperCase() ;
-    
+      
     if (includeNumber == ("Y")) {
       var addNumber = true;
-      count = 3;
+      count = count + 1;
     }
     else if (includeNumber == ("N")) {
       addNumber = false;
-      count = 3;
+      count = count + 1;
     }
     else {
       alert("Enter Y or N");
     }
   }
 
-  while (count == 3) {
+  //while loop asking user how many characters in password from 8 to 128
+  while (count == 4) {
     let passwordLength = prompt("Choose password length ", "Enter a number: (At least 8 characters)");
     
     if ((passwordLength > 7) && (passwordLength < 129)) {
       addLength = passwordLength;
-      count = 4;
+      count = count + 1 ;
     }
     else {
       alert("Chose a number between 8 and 128");
     }
   }
 
-  var password = "Your Password is:" + addLength;
+  //setting constants and possible characters
+  const upperCaseletter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowerCaseletter = "abcdefghijklmnopqrstuvwxyz";
+  const chooseChars = "!@#$%^&*_-+=";
+  const chooseNumbers = "0123456789";
+  var password ="";
+
+  //iteration looking to see if the characters will be upper, lower, special or number
+  for (var i = 0; i <= addLength; i++) {
+    if((addUppercase) && (addLowercase) && (addSpecialChar) && (addNumber)){
+      var characters = upperCaseletter + lowerCaseletter + chooseChars + chooseNumbers;
+      var randomPassword = Math.floor(Math.random()*characters.length);
+      password += characters.substring(randomPassword, randomPassword +1);
+    }
+    else if ((addUppercase) && (addLowercase) && (addSpecialChar)) {
+      var characters = upperCaseletter + lowerCaseletter + chooseChars;
+      var randomPassword = Math.floor(Math.random()*characters.length);
+      password += characters.substring(randomPassword, randomPassword +1);
+    }
+    else if ((addUppercase) && (addLowercase)) {
+      var characters = upperCaseletter + lowerCaseletter;
+      var randomPassword = Math.floor(Math.random()*characters.length);
+      password += characters.substring(randomPassword, randomPassword +1);
+    }
+    else if ((addUppercase)) {
+      var characters = upperCaseletter;
+      var randomPassword = Math.floor(Math.random()*characters.length);
+      password += characters.substring(randomPassword, randomPassword +1);
+    }
+  }
+  
+
+
+
+  //var password = "Your Password is:" + randomPassword;
   passwordText.value = password;
 
 }
