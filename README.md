@@ -14,7 +14,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ![Generator Homescreen](https://user-images.githubusercontent.com/120453099/212822254-79609ed4-d9ef-4844-aa99-67fc2d342485.png)
 
-
+![Password Generator asking user for criteria](https://user-images.githubusercontent.com/120453099/212822370-9b74642a-5b27-407b-ad3c-20d9ead8927f.png)
 
 ## Credits
 
