@@ -28,46 +28,56 @@ function writePassword() {
       alert("Enter Y or N");
     }
   }
-  //window.alert("Would you like to include a special character", "Enter Special Character");
   
-  let specialChar = prompt("Would you like to include a special character?", "Enter Y or N");
-  
-  specialChar = specialChar.toUpperCase() ;
-  
-  if (specialChar == ("Y")) {
-    var addSpecialChar = true;
-  }
-  else {
-    addSpecialChar = false;
-  }
-
-  let includeNumber = prompt("Would you like to include a number?", "Enter Y or N");
-  
-  includeNumber = includeNumber.toUpperCase() ;
-  
-  if (includeNumber == ("Y")) {
-    var addNumber = true;
-  }
-  else {
-    addNumber = false;
+  while (count == 1) {
+    let specialChar = prompt("Would you like to include a special character?", "Enter Y or N");
+    
+    specialChar = specialChar.toUpperCase() ;
+    
+    if (specialChar == ("Y")) {
+      var addSpecialChar = true;
+      count = 2;
+    }
+    else if (specialChar== ("N")) {
+      addSpecialChar = false;
+      count = 2;
+    }
+    else {
+      alert("Enter Y or N");
+    }
   }
 
-  let passwordLength = prompt("Choose password length ", "Enter a number: (At least 8 characters)");
-  
-  if ((passwordLength < 8) || (passwordLength > 128)) {
-    alert("Chose a number between 8 and 128");
-    var addLength = false;
+  while (count == 2) {
+    let includeNumber = prompt("Would you like to include a number?", "Enter Y or N");
+    
+    includeNumber = includeNumber.toUpperCase() ;
+    
+    if (includeNumber == ("Y")) {
+      var addNumber = true;
+      count = 3;
+    }
+    else if (includeNumber == ("N")) {
+      addNumber = false;
+      count = 3;
+    }
+    else {
+      alert("Enter Y or N");
+    }
   }
-  else {
-    addLength = addNumber;
+
+  while (count == 3) {
+    let passwordLength = prompt("Choose password length ", "Enter a number: (At least 8 characters)");
+    
+    if ((passwordLength > 7) && (passwordLength < 129)) {
+      addLength = passwordLength;
+      count = 4;
+    }
+    else {
+      alert("Chose a number between 8 and 128");
+    }
   }
 
-
-  //uppercaseLetter = upperOption[index];
-
-  
-
-  var password = "Your Password is:" + isCaseLetter;
+  var password = "Your Password is:" + addLength;
   passwordText.value = password;
 
 }
